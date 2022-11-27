@@ -6,15 +6,22 @@ PLATFORM=$1
 ACTION=$2
 
 FFMPEG_VERSION=n4.2
-OPENSSL_VERSION=OpenSSL_1_0_2s
+OPENSSL_VERSION=OpenSSL_1_1_1s
 
 if [ "$ACTION" = "build" ]; then
-    sh scripts/init-openssl.sh $PLATFORM $OPENSSL_VERSION
+    # on macOS use the latest built in or use homebrew to get it
+    if [ "$PLATFORM" != "macOS" ]; then
+        sh scripts/init-openssl.sh $PLATFORM $OPENSSL_VERSION
+    fi
     sh scripts/init-ffmpeg.sh  $PLATFORM $FFMPEG_VERSION
-    sh scripts/compile-openssl.sh $PLATFORM "build"
+    if [ "$PLATFORM" != "macOS" ]; then
+        sh scripts/compile-openssl.sh $PLATFORM "build"
+    fi
     sh scripts/compile-ffmpeg.sh $PLATFORM "build"
 elif [ "$ACTION" = "clean" ]; then
-    sh scripts/compile-openssl.sh $PLATFORM "clean"
+    if [ "$PLATFORM" != "macOS" ]; then
+        sh scripts/compile-openssl.sh $PLATFORM "clean"
+    fi
     sh scripts/compile-ffmpeg.sh $PLATFORM "clean"
 else
     echo "Usage:"
