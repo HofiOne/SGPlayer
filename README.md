@@ -1,3 +1,5 @@
+# This fork adds basic Apple Silicon support to macOS SGPlayer.
+
 ![Logo](https://github.com/libobjc/SGPlayer/blob/master/documents/banner.jpg?raw=true)
 
 
