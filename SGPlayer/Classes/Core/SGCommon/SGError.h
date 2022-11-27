@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, SGErrorCode) {
     SGErrorCodeFormatNotSeekable,
     SGErrorCodePacketOutputCancelSeek,
     SGErrorCodeDemuxerEndOfFile,
-    SGErrorCodeInvlidTime,
+    SGErrorCodeInvalidTime,
 };
 
 typedef NS_ENUM(NSUInteger, SGActionCode) {

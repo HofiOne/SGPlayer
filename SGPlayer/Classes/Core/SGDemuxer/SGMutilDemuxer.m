@@ -128,7 +128,7 @@
 - (NSError *)seekToTime:(CMTime)time toleranceBefor:(CMTime)toleranceBefor toleranceAfter:(CMTime)toleranceAfter
 {
     if (!CMTIME_IS_NUMERIC(time)) {
-        return SGCreateError(SGErrorCodeInvlidTime, SGActionCodeFormatSeekFrame);
+        return SGCreateError(SGErrorCodeInvalidTime, SGActionCodeFormatSeekFrame);
     }
     for (id<SGDemuxable> obj in self->_demuxers) {
         NSError *error = [obj seekToTime:time toleranceBefor:toleranceBefor toleranceAfter:toleranceAfter];

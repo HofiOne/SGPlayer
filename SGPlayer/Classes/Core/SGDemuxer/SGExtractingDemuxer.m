@@ -101,7 +101,7 @@ SGGet0Map(NSError *, seekable, self->_demuxable)
 - (NSError *)seekToTime:(CMTime)time toleranceBefor:(CMTime)toleranceBefor toleranceAfter:(CMTime)toleranceAfter
 {
     if (!CMTIME_IS_NUMERIC(time)) {
-        return SGCreateError(SGErrorCodeInvlidTime, SGActionCodeFormatSeekFrame);
+        return SGCreateError(SGErrorCodeInvalidTime, SGActionCodeFormatSeekFrame);
     }
     time = [self->_scaleLayout reconvertTimeStamp:time];
     time = [self->_offsetLayout reconvertTimeStamp:time];

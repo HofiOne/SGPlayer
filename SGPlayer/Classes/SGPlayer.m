@@ -216,7 +216,7 @@ NSNotificationName const SGPlayerDidChangeInfosNotification = @"SGPlayerDidChang
     return timeInfo;
 }
 
-- (SGStateInfo)sstateInfo
+- (SGStateInfo)stateInfo
 {
     SGStateInfo stateInfo;
     [self stateInfo:&stateInfo timeInfo:nil error:nil];
@@ -592,7 +592,7 @@ NSNotificationName const SGPlayerDidChangeInfosNotification = @"SGPlayerDidChang
         SGLockEXE10(self->_lock, ^SGBlock {
             SGInfoAction action = SGInfoActionNone;
             CMTime duration = capacity.duration;
-            SGLoadingState loadingState = (SGCapacityIsEmpty(capacity) || self->_flags.stateInfo.loading == SGLoadingStateFinished) ? SGLoadingStateStalled : SGLoadingStatePlaybale;
+            SGLoadingState loadingState = (SGCapacityIsEmpty(capacity) || self->_flags.stateInfo.loading == SGLoadingStateFinished) ? SGLoadingStateStalled : SGLoadingStatePlayable;
             [self setCachedDuration:duration action:&action];
             SGBlock b1 = [self setLoadingState:loadingState action:&action];
             SGBlock b2 = [self infoCallback:action];

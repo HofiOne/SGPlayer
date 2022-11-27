@@ -42,7 +42,7 @@
  @abstract
     Get player state information.
  */
-- (SGStateInfo)sstateInfo;
+- (SGStateInfo)stateInfo;
 
 /*!
  @method stateInfo:timeInfo:error:

@@ -116,7 +116,7 @@
 - (NSError *)seekToTime:(CMTime)time toleranceBefor:(CMTime)toleranceBefor toleranceAfter:(CMTime)toleranceAfter
 {
     if (!CMTIME_IS_NUMERIC(time)) {
-        return SGCreateError(SGErrorCodeInvlidTime, SGActionCodeFormatSeekFrame);
+        return SGCreateError(SGErrorCodeInvalidTime, SGActionCodeFormatSeekFrame);
     }
     NSError *error = [self seekable];
     if (error) {
