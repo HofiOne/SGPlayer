@@ -24,7 +24,8 @@ IJK_OPENSSL_LOCAL_REPO=build/extra/openssl
 set -e
 
 FF_ALL_ARCHS=
-FF_ALL_ARCHS_IOS="armv7 arm64 x86_64"
+FF_ALL_ARCHS_IOS="armv7 arm64"
+FF_ALL_ARCHS_IOS_SIMULATOR="arm64 x86_64"
 FF_ALL_ARCHS_TVOS="arm64 x86_64"
 FF_ALL_ARCHS_MACOS="arm64 x86_64"
 
@@ -53,12 +54,14 @@ function pull_fork_all() {
 #----------
 if [ "$FF_PLATFORM" = "iOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_IOS
+elif [ "$FF_PLATFORM" = "iOS-Simulator" ]; then
+    FF_ALL_ARCHS=$FF_ALL_ARCHS_IOS_SIMULATOR
 elif [ "$FF_PLATFORM" = "tvOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_TVOS
 elif [ "$FF_PLATFORM" = "macOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_MACOS
 else
-    echo "You must specific an platform 'iOS, tvOS, macOS'.\n"
+    echo "You must specific an platform 'iOS, iOS-Simulator, tvOS, macOS'.\n"
     exit 1
 fi
 

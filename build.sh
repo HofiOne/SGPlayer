@@ -9,24 +9,27 @@ FFMPEG_VERSION=n4.2
 OPENSSL_VERSION=OpenSSL_1_1_1s
 
 if [ "$ACTION" = "build" ]; then
-    # on macOS use the latest built in or use homebrew to get it
-    if [ "$PLATFORM" != "macOS" ]; then
+    # on macOS one can use the latest built in or use homebrew to get it
+    #if [ "$PLATFORM" != "macOS" ]; then
         sh scripts/init-openssl.sh $PLATFORM $OPENSSL_VERSION
-    fi
+    #fi
     sh scripts/init-ffmpeg.sh  $PLATFORM $FFMPEG_VERSION
-    if [ "$PLATFORM" != "macOS" ]; then
+    #if [ "$PLATFORM" != "macOS" ]; then
         sh scripts/compile-openssl.sh $PLATFORM "build"
-    fi
+    #fi
     sh scripts/compile-ffmpeg.sh $PLATFORM "build"
 elif [ "$ACTION" = "clean" ]; then
-    if [ "$PLATFORM" != "macOS" ]; then
+    #if [ "$PLATFORM" != "macOS" ]; then
         sh scripts/compile-openssl.sh $PLATFORM "clean"
-    fi
+    #fi
     sh scripts/compile-ffmpeg.sh $PLATFORM "clean"
 else
     echo "Usage:"
     echo "  build.sh iOS build"
     echo "  build.sh iOS clean"
+    echo " ---"
+    echo "  build.sh iOS-Simulator build"
+    echo "  build.sh iOS-Simulator clean"
     echo " ---"
     echo "  build.sh tvOS build"
     echo "  build.sh tvOS clean"

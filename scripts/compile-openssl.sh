@@ -22,7 +22,8 @@
 set -e
 
 FF_ALL_ARCHS=
-FF_ALL_ARCHS_IOS="armv7 arm64 x86_64"
+FF_ALL_ARCHS_IOS="armv7 arm64"
+FF_ALL_ARCHS_IOS_SIMULATOR="arm64 x86_64"
 FF_ALL_ARCHS_TVOS="arm64 x86_64"
 FF_ALL_ARCHS_MACOS="arm64 x86_64"
 
@@ -72,12 +73,14 @@ do_lipo_all () {
 #----------
 if [ "$FF_PLATFORM" = "iOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_IOS
+elif [ "$FF_PLATFORM" = "iOS-Simulator" ]; then
+    FF_ALL_ARCHS=$FF_ALL_ARCHS_IOS_SIMULATOR
 elif [ "$FF_PLATFORM" = "tvOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_TVOS
 elif [ "$FF_PLATFORM" = "macOS" ]; then
     FF_ALL_ARCHS=$FF_ALL_ARCHS_MACOS
 else
-    echo "You must specific an platform 'iOS, tvOS, macOS'.\n"
+    echo "You must specific an platform 'iOS, iOS-Simulator, tvOS, macOS'.\n"
     exit 1
 fi
 
@@ -98,6 +101,9 @@ else
     echo "Usage:"
     echo "  compile-openssl.sh iOS build"
     echo "  compile-openssl.sh iOS clean"
+    echo " ---"
+    echo "  compile-openssl.sh iOS-Simulator build"
+    echo "  compile-openssl.sh iOS-Simulator clean"
     echo " ---"
     echo "  compile-openssl.sh tvOS build"
     echo "  compile-openssl.sh tvOS clean"
