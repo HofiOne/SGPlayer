@@ -85,7 +85,7 @@ FF_BUILD_NAME="unknown"
 FF_XCRUN_PLATFORM=
 FF_XCRUN_OSVERSION=
 FF_GASPP_EXPORT=
-FF_XCODE_BITCODE="-fembed-bitcode"
+FF_XCODE_BITCODE= # "-fembed-bitcode" clang: error: linker command failed -> ld: -bundle and -bitcode_bundle (Xcode setting ENABLE_BITCODE=YES) cannot be used together
 
 if [ "$FF_PLATFORM" = "iOS" ]; then
     if [ "$FF_ARCH" = "i386" ]; then
@@ -197,7 +197,7 @@ if [ -f "./Makefile" ]; then
 else
     echo "config: $OPENSSL_CFG_FLAGS"
     ./Configure \
-        $OPENSSL_CFG_FLAGS
+        $OPENSSL_CFG_FLAGS --prefix=${FF_BUILD_PREFIX}
     make clean
 fi
 

@@ -888,6 +888,8 @@
 		9CFA2369230BD00C00061AAC /* avformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avformat.h; sourceTree = "<group>"; };
 		9CFA236B230BD00C00061AAC /* swscale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swscale.h; sourceTree = "<group>"; };
 		9CFA236D230BD00C00061AAC /* swresample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swresample.h; sourceTree = "<group>"; };
+		D65451F029465B34005563A5 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		D65451F129465B35005563A5 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1344,6 +1346,7 @@
 		9CEFA6CC1E7122BF00835CAB = {
 			isa = PBXGroup;
 			children = (
+				D65451EF29465B05005563A5 /* Build */,
 				9CEFA6D81E7122BF00835CAB /* SGPlayer */,
 				9CEFA6D71E7122BF00835CAB /* Products */,
 				9C4793421E71402E00AD4289 /* Frameworks */,
@@ -1567,6 +1570,15 @@
 				9CFA236D230BD00C00061AAC /* swresample.h */,
 			);
 			path = libswresample;
+			sourceTree = "<group>";
+		};
+		D65451EF29465B05005563A5 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				D65451F029465B34005563A5 /* build.sh */,
+				D65451F129465B35005563A5 /* scripts */,
+			);
+			name = Build;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
