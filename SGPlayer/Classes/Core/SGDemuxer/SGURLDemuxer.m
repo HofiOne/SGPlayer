@@ -159,15 +159,19 @@
             if (CMTIME_IS_NUMERIC(self->_seektimeMinimum)) {
                 start = CMTimeMaximum(start, self->_seektimeMinimum);
             }
-            SGCodecDescriptor *cd = [[SGCodecDescriptor alloc] init];
-            cd.track = [self->_tracks objectAtIndex:pkt.core->stream_index];
-            cd.metadata = SGDictionaryFF2NS(stream->metadata);
-            cd.timebase = stream->time_base;
-            cd.codecpar = stream->codecpar;
-            [cd appendTimeRange:CMTimeRangeMake(start, kCMTimePositiveInfinity)];
-            [pkt setCodecDescriptor:cd];
-            [pkt fill];
-            *packet = pkt;
+            if (pkt.core->stream_index < self->_tracks.count) {
+                SGCodecDescriptor *cd = [[SGCodecDescriptor alloc] init];
+                cd.track = [self->_tracks objectAtIndex:pkt.core->stream_index];
+                cd.metadata = SGDictionaryFF2NS(stream->metadata);
+                cd.timebase = stream->time_base;
+                cd.codecpar = stream->codecpar;
+                [cd appendTimeRange:CMTimeRangeMake(start, kCMTimePositiveInfinity)];
+                [pkt setCodecDescriptor:cd];
+                [pkt fill];
+                *packet = pkt;
+            }
+            else
+                [pkt unlock];
         }
         NSError *error = SGGetFFError(ret, SGActionCodeFormatReadFrame);
         if (error.code == SGErrorCodeDemuxerEndOfFile) {
