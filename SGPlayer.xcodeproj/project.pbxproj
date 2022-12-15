@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5D9D84362AA92B21FBC6CA /* libPods-Libs-SGPlayer tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7487CEC11B6360D03D41AF59 /* libPods-Libs-SGPlayer tvOS.a */; };
+		8FBB54873D0E1A1C867AB74E /* libPods-Libs-SGPlayer iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A90E9D562C2637F331E9C /* libPods-Libs-SGPlayer iOS.a */; };
 		9C03E5EC212E616B001F0E1B /* SGMotionSensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C03E5EA212E616B001F0E1B /* SGMotionSensor.h */; };
 		9C03E5ED212E616B001F0E1B /* SGMotionSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C03E5EB212E616B001F0E1B /* SGMotionSensor.m */; };
 		9C03E5F0212E645B001F0E1B /* SGVRProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C03E5EE212E645B001F0E1B /* SGVRProjection.h */; };
@@ -549,14 +551,6 @@
 		9CF52CFA200F45D700950B81 /* SGTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF52CF6200F45D700950B81 /* SGTrack.m */; };
 		9CF63FC2211D8E33001B2684 /* SGAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF63FC0211D8E33001B2684 /* SGAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CF63FC3211D8E33001B2684 /* SGAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF63FC1211D8E33001B2684 /* SGAsset.m */; };
-		9CFA2343230BCE5100061AAC /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA233B230BCE5100061AAC /* libavutil.a */; };
-		9CFA2344230BCE5100061AAC /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA233C230BCE5100061AAC /* libswscale.a */; };
-		9CFA2345230BCE5100061AAC /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA233D230BCE5100061AAC /* libssl.a */; };
-		9CFA2346230BCE5100061AAC /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA233E230BCE5100061AAC /* libavformat.a */; };
-		9CFA2347230BCE5100061AAC /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA233F230BCE5100061AAC /* libavfilter.a */; };
-		9CFA2348230BCE5100061AAC /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2340230BCE5100061AAC /* libcrypto.a */; };
-		9CFA2349230BCE5100061AAC /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2341230BCE5100061AAC /* libavcodec.a */; };
-		9CFA234A230BCE5100061AAC /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2342230BCE5100061AAC /* libswresample.a */; };
 		9CFA2354230BCFFC00061AAC /* imgutils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA234D230BCFFC00061AAC /* imgutils.h */; };
 		9CFA2355230BCFFC00061AAC /* avformat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA234F230BCFFC00061AAC /* avformat.h */; };
 		9CFA2356230BCFFC00061AAC /* swscale.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA2351230BCFFC00061AAC /* swscale.h */; };
@@ -569,23 +563,15 @@
 		9CFA236F230BD00C00061AAC /* avformat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA2369230BD00C00061AAC /* avformat.h */; };
 		9CFA2370230BD00C00061AAC /* swscale.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA236B230BD00C00061AAC /* swscale.h */; };
 		9CFA2371230BD00C00061AAC /* swresample.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA236D230BD00C00061AAC /* swresample.h */; };
-		D6A124AE294B4B22009ADA97 /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12486294B3F7A009ADA97 /* libavcodec.framework */; platformFilter = ios; };
-		D6A124B0294B4B24009ADA97 /* libavdevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A124A9294B404D009ADA97 /* libavdevice.framework */; platformFilter = ios; };
-		D6A124B2294B4B26009ADA97 /* libavfilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12484294B3F7A009ADA97 /* libavfilter.framework */; platformFilter = ios; };
-		D6A124B4294B4B28009ADA97 /* libavformat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12483294B3F7A009ADA97 /* libavformat.framework */; platformFilter = ios; };
-		D6A124B6294B4B2A009ADA97 /* libavutil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12487294B3F7A009ADA97 /* libavutil.framework */; platformFilter = ios; };
-		D6A124B8294B4B2D009ADA97 /* libswresample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12482294B3F7A009ADA97 /* libswresample.framework */; platformFilter = ios; };
-		D6A124BA294B4B30009ADA97 /* libswscale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12485294B3F7A009ADA97 /* libswscale.framework */; platformFilter = ios; };
-		D6A124BD294B51D7009ADA97 /* libavcodec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A1244A294B3ACC009ADA97 /* libavcodec.framework */; };
-		D6A124BF294B51D8009ADA97 /* libavfilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A1244B294B3ACD009ADA97 /* libavfilter.framework */; };
-		D6A124C1294B51D9009ADA97 /* libavformat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A1244C294B3ACD009ADA97 /* libavformat.framework */; };
-		D6A124C3294B51DA009ADA97 /* libavutil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12448294B3ACC009ADA97 /* libavutil.framework */; };
-		D6A124C5294B51DB009ADA97 /* libswresample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12446294B3ACC009ADA97 /* libswresample.framework */; };
-		D6A124C7294B51DC009ADA97 /* libswscale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A12449294B3ACC009ADA97 /* libswscale.framework */; };
-		D6A124CB294B51DE009ADA97 /* libavdevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A124CA294B51DE009ADA97 /* libavdevice.framework */; };
+		C75265D22303F21AEF92B805 /* libPods-Libs-SGPlayer macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D02B6E048C6CF83F6A5C2CA2 /* libPods-Libs-SGPlayer macOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CAB8738796D27ED8663975B /* Pods-Libs-SGPlayer macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer macOS.debug.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer macOS/Pods-Libs-SGPlayer macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF0B86D4EB3349F625E6334 /* Pods-Libs-SGPlayer macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer macOS.release.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer macOS/Pods-Libs-SGPlayer macOS.release.xcconfig"; sourceTree = "<group>"; };
+		5A7A90E9D562C2637F331E9C /* libPods-Libs-SGPlayer iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Libs-SGPlayer iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7487CEC11B6360D03D41AF59 /* libPods-Libs-SGPlayer tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Libs-SGPlayer tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		835FAD68AFF269DFD28CCD41 /* Pods-Libs-SGPlayer iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer iOS.debug.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer iOS/Pods-Libs-SGPlayer iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9C03E5EA212E616B001F0E1B /* SGMotionSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGMotionSensor.h; sourceTree = "<group>"; };
 		9C03E5EB212E616B001F0E1B /* SGMotionSensor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGMotionSensor.m; sourceTree = "<group>"; };
 		9C03E5EE212E645B001F0E1B /* SGVRProjection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGVRProjection.h; sourceTree = "<group>"; };
@@ -886,9 +872,12 @@
 		9CFA2369230BD00C00061AAC /* avformat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avformat.h; sourceTree = "<group>"; };
 		9CFA236B230BD00C00061AAC /* swscale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swscale.h; sourceTree = "<group>"; };
 		9CFA236D230BD00C00061AAC /* swresample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swresample.h; sourceTree = "<group>"; };
+		9D20FB460549834E88B6AAD2 /* Pods-Libs-SGPlayer tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer tvOS/Pods-Libs-SGPlayer tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		AC2569AD773A415E40FBC30E /* Pods-Libs-SGPlayer iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer iOS.release.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer iOS/Pods-Libs-SGPlayer iOS.release.xcconfig"; sourceTree = "<group>"; };
+		C2CE1D98AF9F6E8FE1036B4C /* Pods-Libs-SGPlayer tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer tvOS.release.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer tvOS/Pods-Libs-SGPlayer tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D02B6E048C6CF83F6A5C2CA2 /* libPods-Libs-SGPlayer macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Libs-SGPlayer macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65451F029465B34005563A5 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		D65451F129465B35005563A5 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
-		D667C34929469D8E00A1C8B0 /* SGPlayer iOS copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SGPlayer iOS copy-Info.plist"; path = "/Users/hofi/Develop/Hofi/Frameworks/Sources/SGPlayer/SGPlayer iOS copy-Info.plist"; sourceTree = "<absolute>"; };
 		D6A1242D294B36D6009ADA97 /* libavformat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavformat.framework; path = "build/source/iOS-Simulator/ffmpegkit/prebuilt/bundle-apple-framework-ios/libavformat.framework"; sourceTree = "<group>"; };
 		D6A1242E294B36D6009ADA97 /* libavdevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavdevice.framework; path = "build/source/iOS-Simulator/ffmpegkit/prebuilt/bundle-apple-framework-ios/libavdevice.framework"; sourceTree = "<group>"; };
 		D6A1242F294B36D7009ADA97 /* libswscale.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libswscale.framework; path = "build/source/iOS-Simulator/ffmpegkit/prebuilt/bundle-apple-framework-ios/libswscale.framework"; sourceTree = "<group>"; };
@@ -920,16 +909,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A124C1294B51D9009ADA97 /* libavformat.framework in Frameworks */,
-				D6A124BD294B51D7009ADA97 /* libavcodec.framework in Frameworks */,
-				D6A124C5294B51DB009ADA97 /* libswresample.framework in Frameworks */,
-				D6A124BF294B51D8009ADA97 /* libavfilter.framework in Frameworks */,
-				D6A124C3294B51DA009ADA97 /* libavutil.framework in Frameworks */,
-				D6A124CB294B51DE009ADA97 /* libavdevice.framework in Frameworks */,
 				9C86383421904A0900D730EC /* UIKit.framework in Frameworks */,
-				D6A124C7294B51DC009ADA97 /* libswscale.framework in Frameworks */,
 				9C86383521904A0900D730EC /* AVFoundation.framework in Frameworks */,
 				9C86383621904A0900D730EC /* Foundation.framework in Frameworks */,
+				C75265D22303F21AEF92B805 /* libPods-Libs-SGPlayer macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -937,17 +920,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CFA2343230BCE5100061AAC /* libavutil.a in Frameworks */,
-				9CFA2344230BCE5100061AAC /* libswscale.a in Frameworks */,
-				9CFA2345230BCE5100061AAC /* libssl.a in Frameworks */,
-				9CFA2346230BCE5100061AAC /* libavformat.a in Frameworks */,
-				9CFA2347230BCE5100061AAC /* libavfilter.a in Frameworks */,
-				9CFA2348230BCE5100061AAC /* libcrypto.a in Frameworks */,
-				9CFA2349230BCE5100061AAC /* libavcodec.a in Frameworks */,
-				9CFA234A230BCE5100061AAC /* libswresample.a in Frameworks */,
 				9CD79EDB2190068E00E39A7D /* UIKit.framework in Frameworks */,
 				9CD79EDC2190068E00E39A7D /* AVFoundation.framework in Frameworks */,
 				9CD79EDD2190068E00E39A7D /* Foundation.framework in Frameworks */,
+				3C5D9D84362AA92B21FBC6CA /* libPods-Libs-SGPlayer tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,22 +931,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A124AE294B4B22009ADA97 /* libavcodec.framework in Frameworks */,
-				D6A124B6294B4B2A009ADA97 /* libavutil.framework in Frameworks */,
-				D6A124BA294B4B30009ADA97 /* libswscale.framework in Frameworks */,
-				D6A124B2294B4B26009ADA97 /* libavfilter.framework in Frameworks */,
 				9CCC5F21200C9BBB00E833DA /* UIKit.framework in Frameworks */,
-				D6A124B4294B4B28009ADA97 /* libavformat.framework in Frameworks */,
 				9CCC5F20200C9BB700E833DA /* AVFoundation.framework in Frameworks */,
-				D6A124B8294B4B2D009ADA97 /* libswresample.framework in Frameworks */,
 				9CCC5F1F200C9BB200E833DA /* Foundation.framework in Frameworks */,
-				D6A124B0294B4B24009ADA97 /* libavdevice.framework in Frameworks */,
+				8FBB54873D0E1A1C867AB74E /* libPods-Libs-SGPlayer iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26C59BD3DCF867D95B6E8E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				835FAD68AFF269DFD28CCD41 /* Pods-Libs-SGPlayer iOS.debug.xcconfig */,
+				AC2569AD773A415E40FBC30E /* Pods-Libs-SGPlayer iOS.release.xcconfig */,
+				1CAB8738796D27ED8663975B /* Pods-Libs-SGPlayer macOS.debug.xcconfig */,
+				4DF0B86D4EB3349F625E6334 /* Pods-Libs-SGPlayer macOS.release.xcconfig */,
+				9D20FB460549834E88B6AAD2 /* Pods-Libs-SGPlayer tvOS.debug.xcconfig */,
+				C2CE1D98AF9F6E8FE1036B4C /* Pods-Libs-SGPlayer tvOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../../MeMyselfAndI/Pods;
+			sourceTree = "<group>";
+		};
 		9C03E5E9212E60F7001F0E1B /* SGVR */ = {
 			isa = PBXGroup;
 			children = (
@@ -1215,6 +1199,9 @@
 				9C4793491E71402E00AD4289 /* libssl.a */,
 				9C47934A1E71402E00AD4289 /* libswresample.a */,
 				9C47934B1E71402E00AD4289 /* libswscale.a */,
+				5A7A90E9D562C2637F331E9C /* libPods-Libs-SGPlayer iOS.a */,
+				D02B6E048C6CF83F6A5C2CA2 /* libPods-Libs-SGPlayer macOS.a */,
+				7487CEC11B6360D03D41AF59 /* libPods-Libs-SGPlayer tvOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1395,7 +1382,7 @@
 				9CEFA6D81E7122BF00835CAB /* SGPlayer */,
 				9CEFA6D71E7122BF00835CAB /* Products */,
 				9C4793421E71402E00AD4289 /* Frameworks */,
-				D667C34929469D8E00A1C8B0 /* SGPlayer iOS copy-Info.plist */,
+				26C59BD3DCF867D95B6E8E3A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1968,6 +1955,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C8638A221904A0900D730EC /* Build configuration list for PBXNativeTarget "SGPlayer macOS" */;
 			buildPhases = (
+				1134EB32B8CB5411B36A0B72 /* [CP] Check Pods Manifest.lock */,
 				9C8637F621904A0900D730EC /* Sources */,
 				9C86383321904A0900D730EC /* Frameworks */,
 				9C86384021904A0900D730EC /* Headers */,
@@ -1986,6 +1974,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CD79FA32190068E00E39A7D /* Build configuration list for PBXNativeTarget "SGPlayer tvOS" */;
 			buildPhases = (
+				E10D8D7830A2F86EB2BFCDE7 /* [CP] Check Pods Manifest.lock */,
 				9CD79E9D2190068E00E39A7D /* Sources */,
 				9CD79EDA2190068E00E39A7D /* Frameworks */,
 				9CD79EE62190068E00E39A7D /* Headers */,
@@ -2004,6 +1993,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CEFA6DE1E7122BF00835CAB /* Build configuration list for PBXNativeTarget "SGPlayer iOS" */;
 			buildPhases = (
+				EA893DB5867465004326DD8F /* [CP] Check Pods Manifest.lock */,
 				9CEFA6D11E7122BF00835CAB /* Sources */,
 				9CEFA6D21E7122BF00835CAB /* Frameworks */,
 				9CEFA6D31E7122BF00835CAB /* Headers */,
@@ -2082,6 +2072,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1134EB32B8CB5411B36A0B72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Libs-SGPlayer macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E10D8D7830A2F86EB2BFCDE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Libs-SGPlayer tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA893DB5867465004326DD8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Libs-SGPlayer iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C8637F621904A0900D730EC /* Sources */ = {
@@ -2345,6 +2404,7 @@
 /* Begin XCBuildConfiguration section */
 		9C8638A321904A0900D730EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CAB8738796D27ED8663975B /* Pods-Libs-SGPlayer macOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2359,29 +2419,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ffmpegkit/prebuilt/bundle-apple-framework-macos",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/macOS/universal/include",
-					/opt/homebrew/opt/openssl/include,
-				);
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/macOS/universal/lib",
-					/opt/homebrew/opt/openssl/lib,
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
@@ -2396,6 +2444,7 @@
 		};
 		9C8638A421904A0900D730EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF0B86D4EB3349F625E6334 /* Pods-Libs-SGPlayer macOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2410,29 +2459,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ffmpegkit/prebuilt/bundle-apple-framework-macos",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/macOS/universal/include",
-					/opt/homebrew/opt/openssl/include,
-				);
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/macOS/universal/lib",
-					/opt/homebrew/opt/openssl/lib,
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
@@ -2447,6 +2484,7 @@
 		};
 		9CD79FA42190068E00E39A7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D20FB460549834E88B6AAD2 /* Pods-Libs-SGPlayer tvOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2459,21 +2497,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/tvOS/universal/include";
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/tvOS/universal/lib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.tvOS;
@@ -2488,6 +2524,7 @@
 		};
 		9CD79FA52190068E00E39A7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CE1D98AF9F6E8FE1036B4C /* Pods-Libs-SGPlayer tvOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2500,21 +2537,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/tvOS/universal/include";
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/tvOS/universal/lib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.tvOS;
@@ -2640,6 +2675,7 @@
 		};
 		9CEFA6DF1E7122BF00835CAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 835FAD68AFF269DFD28CCD41 /* Pods-Libs-SGPlayer iOS.debug.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -2655,40 +2691,34 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ffmpegkit/prebuilt/bundle-apple-framework-ios",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/iOS/universal/include",
-					/opt/homebrew/iOS/openssl/include,
-				);
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/iOS/universal/lib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.iOS;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
 		9CEFA6E01E7122BF00835CAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC2569AD773A415E40FBC30E /* Pods-Libs-SGPlayer iOS.release.xcconfig */;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
@@ -2704,35 +2734,28 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../ffmpegkit/prebuilt/bundle-apple-framework-ios",
+					"$(PODS_FRAMEWORK_SEARCH_PATHS)",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
 				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/build/build/iOS/universal/include",
-					/opt/homebrew/iOS/openssl/include,
-				);
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build/build/iOS/universal/lib";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.iOS;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchsimulator watchos macosx iphonesimulator iphoneos driverkit appletvsimulator appletvos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
