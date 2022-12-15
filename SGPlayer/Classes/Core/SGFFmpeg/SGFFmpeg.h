@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
-#import "avformat.h"
-#import "imgutils.h"
-#import "swresample.h"
-#import "swscale.h"
+#import "libavformat/avformat.h"
+#import "libavutil/imgutils.h"
+#import "libswresample/swresample.h"
+#import "libswscale/swscale.h"
 #import "libavcodec/avcodec.h"
 #pragma clang diagnostic pop
 
