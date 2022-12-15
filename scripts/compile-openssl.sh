@@ -50,6 +50,8 @@ echo_archs() {
 do_lipo () {
     LIB_FILE=$1
     LIPO_FLAGS=
+    
+    local ARCH
     for ARCH in $FF_ALL_ARCHS
     do
         LIPO_FLAGS="$LIPO_FLAGS $UNI_BUILD_ROOT/build/$FF_PLATFORM/openssl-$ARCH/output/lib/$LIB_FILE"
@@ -67,7 +69,13 @@ do_lipo_all () {
         do_lipo "$FF_LIB.a";
     done
 
-    cp -R $UNI_BUILD_ROOT/build/$FF_PLATFORM/openssl-x86_64/output/include $UNI_BUILD_ROOT/build/$FF_PLATFORM/universal/
+    local ARCH
+    for ARCH in $FF_ALL_ARCHS
+    do
+        break
+    done
+
+    cp -R $UNI_BUILD_ROOT/build/$FF_PLATFORM/openssl-$ARCH/output/include $UNI_BUILD_ROOT/build/$FF_PLATFORM/universal/
 }
 
 #----------
