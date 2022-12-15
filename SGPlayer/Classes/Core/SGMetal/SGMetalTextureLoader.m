@@ -134,7 +134,11 @@
                                                        height:heights[i]
                                                         bytes:bytes[i]
                                                   bytesPerRow:bytesPerRow[i]];
-        [textures addObject:texture];
+        // Simulator cannot render this type of texture
+        // TODO:   Try to create a simualtor compatible texture
+        // https://developer.apple.com/documentation/metal/developing_metal_apps_that_run_in_simulator?language=objc
+        if (texture)
+            [textures addObject:texture];
     }
     return textures.count ? textures : nil;
 }
