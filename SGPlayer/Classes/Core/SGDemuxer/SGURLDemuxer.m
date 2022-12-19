@@ -194,10 +194,19 @@ static NSError * SGCreateFormatContext(AVFormatContext **formatContext, NSURL *U
     ctx->interrupt_callback.opaque = opaque;
     NSString *URLString = URL.isFileURL ? URL.path : URL.absoluteString;
     AVDictionary *opts = SGDictionaryNS2FF(options);
-    if ([URLString.lowercaseString hasPrefix:@"rtmp"] ||
-        [URLString.lowercaseString hasPrefix:@"rtsp"]) {
+    
+    // TODO: This one is strange, needs investigation
+    // It seems rtmp streems really need no timeout value here, as the latest original code shown
+    // (otherwise the stream freezes in further stpes)
+    if ([URLString.lowercaseString hasPrefix:@"rtmp"]) {
         av_dict_set(&opts, "timeout", NULL, 0);
     }
+    // But, at the same time it seems (header info less?) rtsp streems require a shorter one for the following avformat_find_stream_info
+    // (otherwise the stream freezes forever in it)
+    if ([URLString.lowercaseString hasPrefix:@"rtsp"]) {
+        av_dict_set(&opts, "timeout", "5000000", 0);
+    }
+
     int success = avformat_open_input(&ctx, URLString.UTF8String, NULL, &opts);
     if (opts) {
         av_dict_free(&opts);
