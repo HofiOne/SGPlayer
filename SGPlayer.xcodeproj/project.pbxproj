@@ -564,7 +564,44 @@
 		9CFA2370230BD00C00061AAC /* swscale.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA236B230BD00C00061AAC /* swscale.h */; };
 		9CFA2371230BD00C00061AAC /* swresample.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA236D230BD00C00061AAC /* swresample.h */; };
 		C75265D22303F21AEF92B805 /* libPods-Libs-SGPlayer macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D02B6E048C6CF83F6A5C2CA2 /* libPods-Libs-SGPlayer macOS.a */; };
+		D60D79CF2950680D00C9360F /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEFA6D61E7122BF00835CAB /* SGPlayer.framework */; };
+		D60D79EA295071D900C9360F /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2314230BCCEA00061AAC /* libavcodec.a */; };
+		D60D79EB295071D900C9360F /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2318230BCCEA00061AAC /* libavfilter.a */; };
+		D60D79EC295071D900C9360F /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2313230BCCE900061AAC /* libavformat.a */; };
+		D60D79ED295071D900C9360F /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2316230BCCEA00061AAC /* libavutil.a */; };
+		D60D79EE295071D900C9360F /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2319230BCCEA00061AAC /* libswresample.a */; };
+		D60D79EF295071D900C9360F /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA231A230BCCEA00061AAC /* libswscale.a */; };
+		D60D79F02950741800C9360F /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2315230BCCEA00061AAC /* libcrypto.a */; };
+		D60D79F12950741800C9360F /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFA2317230BCCEA00061AAC /* libssl.a */; };
+		D60D79F32950745400C9360F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D79F22950743A00C9360F /* libz.tbd */; };
+		D60D79FB2950752400C9360F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D79FA2950752400C9360F /* VideoToolbox.framework */; };
+		D60D79FD2950756700C9360F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D79FC2950756700C9360F /* AudioToolbox.framework */; };
+		D60D79FF295076B200C9360F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60D79FE295076B100C9360F /* CoreAudio.framework */; };
+		D62BA75B295059E00070D7BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D62BA75A295059E00070D7BE /* AppDelegate.m */; };
+		D62BA75E295059E00070D7BE /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D62BA75D295059E00070D7BE /* SceneDelegate.m */; };
+		D62BA761295059E00070D7BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62BA760295059E00070D7BE /* ViewController.m */; };
+		D62BA764295059E00070D7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62BA762295059E00070D7BE /* Main.storyboard */; };
+		D62BA766295059E10070D7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62BA765295059E10070D7BE /* Assets.xcassets */; };
+		D62BA769295059E10070D7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62BA767295059E10070D7BE /* LaunchScreen.storyboard */; };
+		D62BA76C295059E10070D7BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D62BA76B295059E10070D7BE /* main.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D60D79CD29505F2C00C9360F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CEFA6CD1E7122BF00835CAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CEFA6D51E7122BF00835CAB;
+			remoteInfo = "SGPlayer iOS";
+		};
+		D60D79D12950680D00C9360F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CEFA6CD1E7122BF00835CAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CEFA6D51E7122BF00835CAB;
+			remoteInfo = "SGPlayer iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1CAB8738796D27ED8663975B /* Pods-Libs-SGPlayer macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer macOS.debug.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer macOS/Pods-Libs-SGPlayer macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -876,6 +913,32 @@
 		AC2569AD773A415E40FBC30E /* Pods-Libs-SGPlayer iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer iOS.release.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer iOS/Pods-Libs-SGPlayer iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C2CE1D98AF9F6E8FE1036B4C /* Pods-Libs-SGPlayer tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Libs-SGPlayer tvOS.release.xcconfig"; path = "Target Support Files/Pods-Libs-SGPlayer tvOS/Pods-Libs-SGPlayer tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D02B6E048C6CF83F6A5C2CA2 /* libPods-Libs-SGPlayer macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Libs-SGPlayer macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60D79D429506BC100C9360F /* libavfilter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavfilter.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libavfilter.xcframework"; sourceTree = "<group>"; };
+		D60D79D529506BC100C9360F /* libavutil.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavutil.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libavutil.xcframework"; sourceTree = "<group>"; };
+		D60D79D629506BC100C9360F /* libavformat.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavformat.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libavformat.xcframework"; sourceTree = "<group>"; };
+		D60D79D729506BC100C9360F /* libavdevice.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavdevice.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libavdevice.xcframework"; sourceTree = "<group>"; };
+		D60D79D829506BC200C9360F /* libswresample.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libswresample.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libswresample.xcframework"; sourceTree = "<group>"; };
+		D60D79D929506BC200C9360F /* libavcodec.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavcodec.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libavcodec.xcframework"; sourceTree = "<group>"; };
+		D60D79DA29506BC200C9360F /* libswscale.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libswscale.xcframework; path = "../../../MeMyselfAndI/Pods/ffmpeg-kit-ios-full/libswscale.xcframework"; sourceTree = "<group>"; };
+		D60D79F22950743A00C9360F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		D60D79F42950749300C9360F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		D60D79F6295074B900C9360F /* liblzma.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = liblzma.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/liblzma.tbd; sourceTree = DEVELOPER_DIR; };
+		D60D79F8295074E200C9360F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		D60D79FA2950752400C9360F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		D60D79FC2950756700C9360F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		D60D79FE295076B100C9360F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.2.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		D62BA757295059E00070D7BE /* SGPLayerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGPLayerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62BA759295059E00070D7BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D62BA75A295059E00070D7BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D62BA75C295059E00070D7BE /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		D62BA75D295059E00070D7BE /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D62BA75F295059E00070D7BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D62BA760295059E00070D7BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D62BA763295059E00070D7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D62BA765295059E10070D7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D62BA768295059E10070D7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D62BA76A295059E10070D7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D62BA76B295059E10070D7BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D65451F029465B34005563A5 /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		D65451F129465B35005563A5 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		D6A1242D294B36D6009ADA97 /* libavformat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavformat.framework; path = "build/source/iOS-Simulator/ffmpegkit/prebuilt/bundle-apple-framework-ios/libavformat.framework"; sourceTree = "<group>"; };
@@ -935,6 +998,26 @@
 				9CCC5F20200C9BB700E833DA /* AVFoundation.framework in Frameworks */,
 				9CCC5F1F200C9BB200E833DA /* Foundation.framework in Frameworks */,
 				8FBB54873D0E1A1C867AB74E /* libPods-Libs-SGPlayer iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D62BA754295059E00070D7BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D60D79ED295071D900C9360F /* libavutil.a in Frameworks */,
+				D60D79EF295071D900C9360F /* libswscale.a in Frameworks */,
+				D60D79FF295076B200C9360F /* CoreAudio.framework in Frameworks */,
+				D60D79F12950741800C9360F /* libssl.a in Frameworks */,
+				D60D79FB2950752400C9360F /* VideoToolbox.framework in Frameworks */,
+				D60D79F02950741800C9360F /* libcrypto.a in Frameworks */,
+				D60D79EB295071D900C9360F /* libavfilter.a in Frameworks */,
+				D60D79CF2950680D00C9360F /* SGPlayer.framework in Frameworks */,
+				D60D79EA295071D900C9360F /* libavcodec.a in Frameworks */,
+				D60D79EE295071D900C9360F /* libswresample.a in Frameworks */,
+				D60D79EC295071D900C9360F /* libavformat.a in Frameworks */,
+				D60D79F32950745400C9360F /* libz.tbd in Frameworks */,
+				D60D79FD2950756700C9360F /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,6 +1155,20 @@
 		9C4793421E71402E00AD4289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D60D79FE295076B100C9360F /* CoreAudio.framework */,
+				D60D79FC2950756700C9360F /* AudioToolbox.framework */,
+				D60D79FA2950752400C9360F /* VideoToolbox.framework */,
+				D60D79F8295074E200C9360F /* libbz2.tbd */,
+				D60D79F6295074B900C9360F /* liblzma.tbd */,
+				D60D79F42950749300C9360F /* libiconv.tbd */,
+				D60D79F22950743A00C9360F /* libz.tbd */,
+				D60D79D929506BC200C9360F /* libavcodec.xcframework */,
+				D60D79D729506BC100C9360F /* libavdevice.xcframework */,
+				D60D79D429506BC100C9360F /* libavfilter.xcframework */,
+				D60D79D629506BC100C9360F /* libavformat.xcframework */,
+				D60D79D529506BC100C9360F /* libavutil.xcframework */,
+				D60D79D829506BC200C9360F /* libswresample.xcframework */,
+				D60D79DA29506BC200C9360F /* libswscale.xcframework */,
 				D6A124A9294B404D009ADA97 /* libavdevice.framework */,
 				D6A124CA294B51DE009ADA97 /* libavdevice.framework */,
 				D6A12434294B36D7009ADA97 /* ffmpegkit.framework */,
@@ -1380,6 +1477,7 @@
 			children = (
 				D65451EF29465B05005563A5 /* Build */,
 				9CEFA6D81E7122BF00835CAB /* SGPlayer */,
+				D62BA758295059E00070D7BE /* SGPLayerTest */,
 				9CEFA6D71E7122BF00835CAB /* Products */,
 				9C4793421E71402E00AD4289 /* Frameworks */,
 				26C59BD3DCF867D95B6E8E3A /* Pods */,
@@ -1392,6 +1490,7 @@
 				9CEFA6D61E7122BF00835CAB /* SGPlayer.framework */,
 				9CD79FA62190068E00E39A7D /* SGPlayer.framework */,
 				9C8638A521904A0900D730EC /* SGPlayer.framework */,
+				D62BA757295059E00070D7BE /* SGPLayerTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1603,6 +1702,24 @@
 				9CFA236D230BD00C00061AAC /* swresample.h */,
 			);
 			path = libswresample;
+			sourceTree = "<group>";
+		};
+		D62BA758295059E00070D7BE /* SGPLayerTest */ = {
+			isa = PBXGroup;
+			children = (
+				D62BA759295059E00070D7BE /* AppDelegate.h */,
+				D62BA75A295059E00070D7BE /* AppDelegate.m */,
+				D62BA75C295059E00070D7BE /* SceneDelegate.h */,
+				D62BA75D295059E00070D7BE /* SceneDelegate.m */,
+				D62BA75F295059E00070D7BE /* ViewController.h */,
+				D62BA760295059E00070D7BE /* ViewController.m */,
+				D62BA762295059E00070D7BE /* Main.storyboard */,
+				D62BA765295059E10070D7BE /* Assets.xcassets */,
+				D62BA767295059E10070D7BE /* LaunchScreen.storyboard */,
+				D62BA76A295059E10070D7BE /* Info.plist */,
+				D62BA76B295059E10070D7BE /* main.m */,
+			);
+			path = SGPLayerTest;
 			sourceTree = "<group>";
 		};
 		D65451EF29465B05005563A5 /* Build */ = {
@@ -2008,6 +2125,25 @@
 			productReference = 9CEFA6D61E7122BF00835CAB /* SGPlayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D62BA756295059E00070D7BE /* SGPLayerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D62BA76F295059E10070D7BE /* Build configuration list for PBXNativeTarget "SGPLayerTest" */;
+			buildPhases = (
+				D62BA753295059E00070D7BE /* Sources */,
+				D62BA754295059E00070D7BE /* Frameworks */,
+				D62BA755295059E00070D7BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D60D79CE29505F2C00C9360F /* PBXTargetDependency */,
+				D60D79D22950680D00C9360F /* PBXTargetDependency */,
+			);
+			name = SGPLayerTest;
+			productName = SGPLayerTest;
+			productReference = D62BA757295059E00070D7BE /* SGPLayerTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2027,6 +2163,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					D62BA756295059E00070D7BE = {
+						CreatedOnToolsVersion = 14.2;
+						DevelopmentTeam = 8S4R32JB62;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 9CEFA6D01E7122BF00835CAB /* Build configuration list for PBXProject "SGPlayer" */;
@@ -2036,6 +2177,7 @@
 			knownRegions = (
 				English,
 				en,
+				Base,
 			);
 			mainGroup = 9CEFA6CC1E7122BF00835CAB;
 			productRefGroup = 9CEFA6D71E7122BF00835CAB /* Products */;
@@ -2045,6 +2187,7 @@
 				9CEFA6D51E7122BF00835CAB /* SGPlayer iOS */,
 				9C8637F521904A0900D730EC /* SGPlayer macOS */,
 				9CD79E9C2190068E00E39A7D /* SGPlayer tvOS */,
+				D62BA756295059E00070D7BE /* SGPLayerTest */,
 			);
 		};
 /* End PBXProject section */
@@ -2068,6 +2211,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D62BA755295059E00070D7BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D62BA769295059E10070D7BE /* LaunchScreen.storyboard in Resources */,
+				D62BA766295059E10070D7BE /* Assets.xcassets in Resources */,
+				D62BA764295059E00070D7BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2399,7 +2552,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D62BA753295059E00070D7BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D62BA761295059E00070D7BE /* ViewController.m in Sources */,
+				D62BA75B295059E00070D7BE /* AppDelegate.m in Sources */,
+				D62BA76C295059E10070D7BE /* main.m in Sources */,
+				D62BA75E295059E00070D7BE /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D60D79CE29505F2C00C9360F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CEFA6D51E7122BF00835CAB /* SGPlayer iOS */;
+			targetProxy = D60D79CD29505F2C00C9360F /* PBXContainerItemProxy */;
+		};
+		D60D79D22950680D00C9360F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CEFA6D51E7122BF00835CAB /* SGPlayer iOS */;
+			targetProxy = D60D79D12950680D00C9360F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D62BA762295059E00070D7BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D62BA763295059E00070D7BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D62BA767295059E10070D7BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D62BA768295059E10070D7BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9C8638A321904A0900D730EC /* Debug */ = {
@@ -2759,6 +2955,85 @@
 			};
 			name = Release;
 		};
+		D62BA76D295059E10070D7BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8S4R32JB62;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SGPLayerTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/build/iOS/universal/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sgplayer.SGPLayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D62BA76E295059E10070D7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8S4R32JB62;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SGPLayerTest/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/build/iOS/universal/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sgplayer.SGPLayerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2794,6 +3069,15 @@
 			buildConfigurations = (
 				9CEFA6DF1E7122BF00835CAB /* Debug */,
 				9CEFA6E01E7122BF00835CAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D62BA76F295059E10070D7BE /* Build configuration list for PBXNativeTarget "SGPLayerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D62BA76D295059E10070D7BE /* Debug */,
+				D62BA76E295059E10070D7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
