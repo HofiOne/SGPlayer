@@ -80,7 +80,7 @@ if [ "$ACTION" = "build" ]; then
 
     if [ "$PLATFORM" = "iOS" ] || [ "$PLATFORM" = "all" ]; then
         pushd "${DEBUG_BUILD_DIR}"
-        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --target=13.0 -x -d $@
+        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target=13.0 -x -d $@
 
         OUT_DIR="${FRAMEWORK_DIR}/iOS/Debug/"
         clean_targets_from "${OUT_DIR}"
@@ -90,7 +90,7 @@ if [ "$ACTION" = "build" ]; then
         popd
         
         pushd "${RELEASE_BUILD_DIR}"
-        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --target=13.0 -x -s $@
+        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target=13.0 -x -s $@
 
         OUT_DIR="${FRAMEWORK_DIR}/iOS/Release/"
         clean_targets_from "${OUT_DIR}"

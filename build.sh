@@ -8,7 +8,7 @@ ACTION=$2
 FFMPEG_VERSION=n5.0.2
 OPENSSL_VERSION=OpenSSL_1_1_1s
 
-echo "Do not use attached FFMpeg build support! Use FFMpegKit instead that supports iOS simulator builds as well!"
+echo "Do not use attached FFMpeg build support! Use FFMpegKit (buildkit.sh) instead that supports iOS simulator builds as well!"
 exit 1
 
 if [ "$ACTION" = "build" ]; then
