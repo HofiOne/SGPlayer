@@ -998,6 +998,7 @@
 		D6A12487294B3F7A009ADA97 /* libavutil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavutil.framework; path = "../ffmpegkit/prebuilt/bundle-apple-framework-ios/libavutil.framework"; sourceTree = "<group>"; };
 		D6A124A9294B404D009ADA97 /* libavdevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavdevice.framework; path = "../ffmpegkit/prebuilt/bundle-apple-framework-ios/libavdevice.framework"; sourceTree = "<group>"; };
 		D6A124CA294B51DE009ADA97 /* libavdevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavdevice.framework; path = "../ffmpegkit/prebuilt/bundle-apple-framework-macos/libavdevice.framework"; sourceTree = "<group>"; };
+		D6E4077A30A75C7900347FCA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1540,6 +1541,7 @@
 		9CEFA6CC1E7122BF00835CAB = {
 			isa = PBXGroup;
 			children = (
+				D6E4077A30A75C7900347FCA /* README.md */,
 				D65451EF29465B05005563A5 /* Build */,
 				9CEFA6D81E7122BF00835CAB /* SGPlayer */,
 				D62BA758295059E00070D7BE /* SGPLayerTest */,
@@ -2881,14 +2883,14 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.iOS;
 				PRODUCT_NAME = SGPlayer;
@@ -2923,14 +2925,14 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MODULEMAP_FILE = "$(PROJECT_DIR)/SGPlayer/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer.iOS;
 				PRODUCT_NAME = SGPlayer;
