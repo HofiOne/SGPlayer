@@ -13,7 +13,11 @@
 
 #import "SGPLFTargets.h"
 #if SGPLATFORM_TARGET_OS_IPHONE
+#if TARGET_OS_SIMULATOR
+#import "SGMetalShader_iOSSimulator.h"
+#else
 #import "SGMetalShader_iOS.h"
+#endif
 #elif SGPLATFORM_TARGET_OS_TV
 #import "SGMetalShader_tvOS.h"
 #elif SGPLATFORM_TARGET_OS_MAC
