@@ -8,6 +8,27 @@ FRAMEWORK_DIR="${FRAMEWORK_DIR:-${SCRIPT_DIR}/../..}"
 DEBUG_BUILD_DIR="${BUILD_DIR}/Debug"
 RELEASE_BUILD_DIR="${BUILD_DIR}/Release"
 
+function get_deployment_target()
+{
+    local PLATFORM=$1
+    local CONFIGURATION=$2
+    local VARIABLE
+    case "$PLATFORM" in
+        iOS) VARIABLE=IPHONEOS_DEPLOYMENT_TARGET ;;
+        macOS) VARIABLE=MACOSX_DEPLOYMENT_TARGET ;;
+        tvOS) VARIABLE=TVOS_DEPLOYMENT_TARGET ;;
+    esac
+    local VALUE="${COMMAND_LINE_DEPLOYMENT_TARGET:-${!VARIABLE:-}}"
+    if [[ -z "$VALUE" ]]; then
+        VALUE="$(ruby "${SCRIPT_DIR}/scripts/deployment-target.rb" "$PLATFORM" "$CONFIGURATION")" || return
+    fi
+    if [[ ! "$VALUE" =~ ^[0-9]+(\.[0-9]+){0,2}$ ]]; then
+        printf 'Invalid deployment target for %s: %s\n' "$PLATFORM" "$VALUE" >&2
+        return 1
+    fi
+    printf '%s\n' "$VALUE"
+}
+
 function clean_targets_from()
 {
     local OUT_DIR=$1
@@ -74,6 +95,19 @@ if [[ "$ACTION" == clean && ( "$PLATFORM" != all || $# -gt 0 ) ]]; then
     exit 1
 fi
 
+COMMAND_LINE_DEPLOYMENT_TARGET=""
+for ARGUMENT in "$@"; do
+    case "$ARGUMENT" in
+        --target=*)
+            COMMAND_LINE_DEPLOYMENT_TARGET="${ARGUMENT#--target=}"
+            if [[ -z "$COMMAND_LINE_DEPLOYMENT_TARGET" ]]; then
+                printf 'Deployment target must not be empty\n' >&2
+                exit 1
+            fi
+            ;;
+    esac
+done
+
 echo "Ok, $ACTION $PLATFORM $*"
 
 if [ "$ACTION" = "build" ]; then
@@ -89,28 +123,36 @@ if [ "$ACTION" = "build" ]; then
     fi
     
     if [ "$PLATFORM" = "macOS" ] || [ "$PLATFORM" = "all" ]; then
+        DEPLOYMENT_TARGET="$(get_deployment_target macOS Debug)"
+        printf 'Deployment target: macOS Debug = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${DEBUG_BUILD_DIR}"
-        ./macos.sh  --enable-macos-avfoundation --enable-macos-audiotoolbox --enable-macos-videotoolbox --enable-macos-bzip2 --enable-macos-zlib --enable-macos-libiconv --enable-openssl --target=10.15  -x -d "$@"
+        ./macos.sh  --enable-macos-avfoundation --enable-macos-audiotoolbox --enable-macos-videotoolbox --enable-macos-bzip2 --enable-macos-zlib --enable-macos-libiconv --enable-openssl --target="${DEPLOYMENT_TARGET}" -x -d "$@"
         
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-macos" "${FRAMEWORK_DIR}/macOS/Debug"
         popd
         
+        DEPLOYMENT_TARGET="$(get_deployment_target macOS Release)"
+        printf 'Deployment target: macOS Release = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${RELEASE_BUILD_DIR}"
-        ./macos.sh  --enable-macos-avfoundation --enable-macos-audiotoolbox --enable-macos-videotoolbox --enable-macos-bzip2 --enable-macos-zlib --enable-macos-libiconv --enable-openssl --target=10.15 -x -s "$@"
+        ./macos.sh  --enable-macos-avfoundation --enable-macos-audiotoolbox --enable-macos-videotoolbox --enable-macos-bzip2 --enable-macos-zlib --enable-macos-libiconv --enable-openssl --target="${DEPLOYMENT_TARGET}" -x -s "$@"
 
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-macos" "${FRAMEWORK_DIR}/macOS/Release"
         popd
     fi
 
     if [ "$PLATFORM" = "iOS" ] || [ "$PLATFORM" = "all" ]; then
+        DEPLOYMENT_TARGET="$(get_deployment_target iOS Debug)"
+        printf 'Deployment target: iOS Debug = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${DEBUG_BUILD_DIR}"
-        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target=13.0 -x -d "$@"
+        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target="${DEPLOYMENT_TARGET}" -x -d "$@"
 
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-ios" "${FRAMEWORK_DIR}/iOS/Debug"
         popd
         
+        DEPLOYMENT_TARGET="$(get_deployment_target iOS Release)"
+        printf 'Deployment target: iOS Release = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${RELEASE_BUILD_DIR}"
-        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target=13.0 -x -s "$@"
+        ./ios.sh --enable-ios-avfoundation --enable-ios-audiotoolbox --enable-ios-videotoolbox --enable-ios-bzip2 --enable-ios-zlib --enable-ios-libiconv --enable-openssl --disable-armv7 --disable-arm64e --target="${DEPLOYMENT_TARGET}" -x -s "$@"
 
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-ios" "${FRAMEWORK_DIR}/iOS/Release"
         popd
@@ -118,6 +160,8 @@ if [ "$ACTION" = "build" ]; then
     fi
 
     if [ "$PLATFORM" = "tvOS" ] || [ "$PLATFORM" = "all" ]; then
+        DEPLOYMENT_TARGET="$(get_deployment_target tvOS Debug)"
+        printf 'Deployment target: tvOS Debug = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${DEBUG_BUILD_DIR}"
         TVOS_PREPARATION="$(ruby "${SCRIPT_DIR}/scripts/prepare-tvos-gnutls.rb" "${PWD}")"
         TVOS_BUILD_OPTIONS=(-x)
@@ -125,11 +169,13 @@ if [ "$ACTION" = "build" ]; then
             TVOS_BUILD_OPTIONS+=(--rebuild-gnutls)
         fi
         SGPLAYER_AUTOPOINT="${AUTOPOINT:-autopoint}" AUTOPOINT="${SCRIPT_DIR}/scripts/gnutls-autopoint.sh" \
-            ./tvos.sh --enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target="${TVOS_DEPLOYMENT_TARGET:-11.0}" "${TVOS_BUILD_OPTIONS[@]}" -d "$@"
+            ./tvos.sh --enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target="${DEPLOYMENT_TARGET}" "${TVOS_BUILD_OPTIONS[@]}" -d "$@"
 
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-tvos" "${FRAMEWORK_DIR}/tvOS/Debug"
         popd
 
+        DEPLOYMENT_TARGET="$(get_deployment_target tvOS Release)"
+        printf 'Deployment target: tvOS Release = %s\n' "${DEPLOYMENT_TARGET}"
         pushd "${RELEASE_BUILD_DIR}"
         TVOS_PREPARATION="$(ruby "${SCRIPT_DIR}/scripts/prepare-tvos-gnutls.rb" "${PWD}")"
         TVOS_BUILD_OPTIONS=(-x)
@@ -137,7 +183,7 @@ if [ "$ACTION" = "build" ]; then
             TVOS_BUILD_OPTIONS+=(--rebuild-gnutls)
         fi
         SGPLAYER_AUTOPOINT="${AUTOPOINT:-autopoint}" AUTOPOINT="${SCRIPT_DIR}/scripts/gnutls-autopoint.sh" \
-            ./tvos.sh --enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target="${TVOS_DEPLOYMENT_TARGET:-11.0}" "${TVOS_BUILD_OPTIONS[@]}" -s "$@"
+            ./tvos.sh --enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target="${DEPLOYMENT_TARGET}" "${TVOS_BUILD_OPTIONS[@]}" -s "$@"
 
         install_targets_from "${PWD}/prebuilt/bundle-apple-xcframework-tvos" "${FRAMEWORK_DIR}/tvOS/Release"
         popd

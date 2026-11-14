@@ -58,6 +58,24 @@ Dir.mktmpdir('buildkit-check-', build_root) do |directory|
   FileUtils.mkdir_p(File.join(sandbox_root, 'scripts'))
   FileUtils.cp(File.join(root, 'scripts/gnutls-autopoint.sh'), File.join(sandbox_root, 'scripts/gnutls-autopoint.sh'))
   FileUtils.cp(File.join(root, 'scripts/prepare-tvos-gnutls.rb'), File.join(sandbox_root, 'scripts/prepare-tvos-gnutls.rb'))
+  FileUtils.cp(File.join(root, 'scripts/deployment-target.rb'), File.join(sandbox_root, 'scripts/deployment-target.rb'))
+  project_objects = {
+    'PROJECT' => {'isa' => 'PBXProject', 'buildConfigurationList' => 'PROJECT_LIST'},
+    'PROJECT_LIST' => {'buildConfigurations' => %w[PROJECT_DEBUG PROJECT_RELEASE]},
+    'PROJECT_DEBUG' => {'name' => 'Debug', 'buildSettings' => {}},
+    'PROJECT_RELEASE' => {'name' => 'Release', 'buildSettings' => {}}
+  }
+  {'iOS' => ['IPHONEOS_DEPLOYMENT_TARGET', '15.0'], 'macOS' => ['MACOSX_DEPLOYMENT_TARGET', '12.0'], 'tvOS' => ['TVOS_DEPLOYMENT_TARGET', '15.0']}.each do |platform, setting|
+    project_objects[platform] = {'isa' => 'PBXNativeTarget', 'name' => "SGPlayer #{platform}", 'buildConfigurationList' => "#{platform}_LIST"}
+    project_objects["#{platform}_LIST"] = {'buildConfigurations' => ["#{platform}_Debug", "#{platform}_Release"]}
+    %w[Debug Release].each do |configuration|
+      project_objects["#{platform}_#{configuration}"] = {'name' => configuration, 'buildSettings' => {setting[0] => setting[1]}}
+    end
+  end
+  project_path = File.join(sandbox_root, 'SGPlayer.xcodeproj/project.pbxproj')
+  FileUtils.mkdir_p(File.dirname(project_path))
+  project = {'rootObject' => 'PROJECT', 'objects' => project_objects}
+  File.write(project_path, JSON.generate(project))
   builds = File.join(sandbox_root, 'build trees')
   frameworks = File.join(directory, 'installed frameworks')
   calls = File.join(directory, 'calls.jsonl')
@@ -110,6 +128,8 @@ XCRUN
     'SGPLAYER_TEST_CALLS' => calls,
     'SGPLAYER_TEST_FAIL' => nil,
     'SGPLAYER_TEST_OMIT_BUNDLE' => nil,
+    'IPHONEOS_DEPLOYMENT_TARGET' => nil,
+    'MACOSX_DEPLOYMENT_TARGET' => nil,
     'TVOS_DEPLOYMENT_TARGET' => nil,
     'AUTOPOINT' => autopoint_stub,
     'PATH' => "#{binaries}:#{ENV.fetch('PATH')}"
@@ -118,6 +138,13 @@ XCRUN
     File.write(calls, '')
     output, error, result = Open3.capture3(environment.merge(overrides), 'bash', sandbox_wrapper, *arguments, chdir: directory)
     events = File.readlines(calls).map { |line| JSON.parse(line) }
+    events.each do |event|
+      target_argument = event.fetch('arguments').reverse.find { |argument| argument.start_with?('--target=') }
+      abort 'Missing deployment target argument' unless target_argument
+      platform = {'ios' => 'iOS', 'macos' => 'macOS', 'tvos' => 'tvOS'}.fetch(event.fetch('platform'))
+      expected_log = "Deployment target: #{platform} #{event.fetch('configuration')} = #{target_argument.delete_prefix('--target=')}"
+      abort 'Effective deployment target was not logged to stdout' unless output.lines.map(&:chomp).include?(expected_log)
+    end
     [output, error, result, events]
   end
 
@@ -127,7 +154,7 @@ XCRUN
   abort 'tvOS did not build Debug and Release' unless events.map { |event| [event['platform'], event['configuration']] } == expected_events
   events.each do |event|
     arguments = event.fetch('arguments')
-    %w[--enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target=11.0 -x].each do |option|
+    %w[--enable-tvos-audiotoolbox --enable-tvos-videotoolbox --enable-tvos-bzip2 --enable-tvos-zlib --enable-tvos-libiconv --enable-gnutls --enable-gmp --enable-nettle --no-bitcode --target=15.0 -x].each do |option|
       abort "Missing option: #{option}" unless arguments.include?(option)
     end
     abort 'Unsupported tvOS OpenSSL option was enabled' if arguments.include?('--enable-openssl')
@@ -169,11 +196,12 @@ XCRUN
   abort error unless result.success? && File.binread(configure_path) == unrelated
   puts 'PASS: GnuTLS autopoint compatibility, original-tool delegation, idempotency and unrelated-source preservation'
 
-  output, error, result, events = invoke.call(['build', 'tvOS'], 'TVOS_DEPLOYMENT_TARGET' => '15.0')
+  output, error, result, events = invoke.call(['build', 'tvOS'], 'TVOS_DEPLOYMENT_TARGET' => '16.0')
   abort output + error unless result.success?
-  abort 'tvOS minimum override was ignored' unless events.all? { |event| event['arguments'].include?('--target=15.0') }
+  abort 'tvOS minimum override was ignored' unless events.all? { |event| event['arguments'].include?('--target=16.0') }
   puts 'PASS: configurable tvOS minimum'
 
+  deployment_defaults = {'ios' => '15.0', 'macos' => '12.0', 'tvos' => '15.0'}
   [%w[build all], ['build'], ['build', '--probe=two words']].each do |arguments|
     output, error, result, events = invoke.call(arguments)
     abort output + error unless result.success?
@@ -181,6 +209,8 @@ XCRUN
     events.each do |event|
       expected_tls = event['platform'] == 'tvos' ? '--enable-gnutls' : '--enable-openssl'
       abort 'Platform TLS backend changed' unless event['arguments'].include?(expected_tls)
+      expected_minimum = "--target=#{deployment_defaults.fetch(event['platform'])}"
+      abort 'Platform deployment default is incorrect' unless event['arguments'].include?(expected_minimum)
     end
     if arguments.last == '--probe=two words'
       abort 'Default platform lost an extra argument' unless events.all? { |event| event['arguments'].include?('--probe=two words') }
@@ -188,7 +218,42 @@ XCRUN
   end
   puts 'PASS: explicit and default all include iOS, macOS and tvOS'
 
-  [[], %w[build unknown-platform], ['unknown-action'], %w[clean tvOS]].each do |arguments|
+  deployment_overrides = {'IPHONEOS_DEPLOYMENT_TARGET' => '16.1', 'MACOSX_DEPLOYMENT_TARGET' => '13.2', 'TVOS_DEPLOYMENT_TARGET' => '16.3'}
+  output, error, result, events = invoke.call(%w[build all], deployment_overrides)
+  abort output + error unless result.success?
+  expected_minimums = {'ios' => '16.1', 'macos' => '13.2', 'tvos' => '16.3'}
+  abort 'Independent deployment overrides were not forwarded' unless events.all? { |event| event['arguments'].include?("--target=#{expected_minimums.fetch(event['platform'])}") }
+  abort 'Deployment overrides skipped a configuration' unless events.map { |event| [event['platform'], event['configuration']] }.sort == deployment_defaults.keys.product(%w[Debug Release]).sort
+  output, error, result, events = invoke.call(%w[build all], deployment_overrides.transform_values { '' })
+  abort output + error unless result.success?
+  abort 'Empty deployment variables did not use defaults' unless events.all? { |event| event['arguments'].include?("--target=#{deployment_defaults.fetch(event['platform'])}") }
+  puts 'PASS: per-platform deployment defaults, independent environment overrides and empty-value fallbacks'
+
+  project_objects['tvOS_Debug']['buildSettings']['TVOS_DEPLOYMENT_TARGET'] = '16.2'
+  project_objects['tvOS_Release']['buildSettings']['TVOS_DEPLOYMENT_TARGET'] = '17.3'
+  File.write(project_path, JSON.generate(project))
+  output, error, result, events = invoke.call(%w[build tvOS])
+  abort output + error unless result.success?
+  configuration_minimums = {'Debug' => '16.2', 'Release' => '17.3'}
+  abort 'Project configuration changes were not read dynamically' unless events.all? { |event| event['arguments'].include?("--target=#{configuration_minimums.fetch(event['configuration'])}") }
+  project_objects['tvOS_Debug']['buildSettings']['TVOS_DEPLOYMENT_TARGET'] = '15.0'
+  project_objects['tvOS_Release']['buildSettings']['TVOS_DEPLOYMENT_TARGET'] = '15.0'
+  File.write(project_path, JSON.generate(project))
+  File.rename(project_path, project_path + '.unavailable')
+  begin
+    output, error, result, _events = invoke.call(%w[build all], deployment_overrides)
+    abort output + error unless result.success?
+    output, error, result, events = invoke.call(%w[build all --target=18.0], deployment_overrides)
+    abort output + error unless result.success?
+    abort 'Explicit target did not override environment/project' unless events.all? { |event| event['arguments'].grep(/\A--target=/).uniq == ['--target=18.0'] }
+    _output, _error, result, events = invoke.call(%w[build all])
+    abort 'Missing project setting was silently replaced by a fixed default' if result.success? || !events.empty?
+  ensure
+    File.rename(project_path + '.unavailable', project_path)
+  end
+  puts 'PASS: live project/configuration defaults, explicit target precedence and missing-project failure'
+
+  [[], %w[build unknown-platform], ['unknown-action'], %w[clean tvOS], %w[build tvOS --target=]].each do |arguments|
     _output, _error, result, events = invoke.call(arguments)
     abort 'Invalid command was accepted' if result.success? || !events.empty?
   end
