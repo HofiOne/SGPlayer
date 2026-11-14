@@ -19,7 +19,11 @@
 #import "SGMetalShader_iOS.h"
 #endif
 #elif SGPLATFORM_TARGET_OS_TV
+#if TARGET_OS_SIMULATOR
+#import "SGMetalShader_tvOSSimulator.h"
+#else
 #import "SGMetalShader_tvOS.h"
+#endif
 #elif SGPLATFORM_TARGET_OS_MAC
 #import "SGMetalShader_macOS.h"
 #endif

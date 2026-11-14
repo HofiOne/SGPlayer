@@ -445,9 +445,9 @@
 		9CD79ED72190068E00E39A7D /* SGAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF63FC1211D8E33001B2684 /* SGAsset.m */; };
 		9CD79ED82190068E00E39A7D /* SGOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C43D50C2187037200235169 /* SGOptions.m */; };
 		9CD79ED92190068E00E39A7D /* SGTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4663C920D0F83600CADDA7 /* SGTime.m */; };
-		9CD79EDB2190068E00E39A7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCC5F0D200C9B7000E833DA /* UIKit.framework */; };
-		9CD79EDC2190068E00E39A7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCC5F11200C9B7B00E833DA /* AVFoundation.framework */; };
-		9CD79EDD2190068E00E39A7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CCC5F0F200C9B7700E833DA /* Foundation.framework */; };
+		9CD79EDB2190068E00E39A7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000008 /* UIKit.framework */; };
+		9CD79EDC2190068E00E39A7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000009 /* AVFoundation.framework */; };
+		9CD79EDD2190068E00E39A7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A800000000000A /* Foundation.framework */; };
 		9CD79EE72190068E00E39A7D /* SGCapacity.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC649FD2181A8C000453B3E /* SGCapacity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CD79EE82190068E00E39A7D /* SGObjectPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2C55912015911600131E15 /* SGObjectPool.h */; };
 		9CD79EE92190068E00E39A7D /* SGObjectQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2C55B32015D92100131E15 /* SGObjectQueue.h */; };
@@ -595,6 +595,13 @@
 		D6531D932E871BCE00B5B612 /* libavutil.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60CC328295106F6000D1D72 /* libavutil.xcframework */; };
 		D6531D952E871BCE00B5B612 /* libswresample.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60CC327295106F5000D1D72 /* libswresample.xcframework */; };
 		D6531D972E871BCE00B5B612 /* libswscale.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60CC32A295106F6000D1D72 /* libswscale.xcframework */; };
+		D6F0A00230A8000000000001 /* libavcodec.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000001 /* libavcodec.xcframework */; };
+		D6F0A00230A8000000000002 /* libavdevice.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000002 /* libavdevice.xcframework */; };
+		D6F0A00230A8000000000003 /* libavfilter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000003 /* libavfilter.xcframework */; };
+		D6F0A00230A8000000000004 /* libavformat.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000004 /* libavformat.xcframework */; };
+		D6F0A00230A8000000000005 /* libavutil.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000005 /* libavutil.xcframework */; };
+		D6F0A00230A8000000000006 /* libswresample.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000006 /* libswresample.xcframework */; };
+		D6F0A00230A8000000000007 /* libswscale.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F0A00130A8000000000007 /* libswscale.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -999,6 +1006,16 @@
 		D6A124A9294B404D009ADA97 /* libavdevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavdevice.framework; path = "../ffmpegkit/prebuilt/bundle-apple-framework-ios/libavdevice.framework"; sourceTree = "<group>"; };
 		D6A124CA294B51DE009ADA97 /* libavdevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libavdevice.framework; path = "../ffmpegkit/prebuilt/bundle-apple-framework-macos/libavdevice.framework"; sourceTree = "<group>"; };
 		D6E4077A30A75C7900347FCA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D6F0A00130A8000000000001 /* libavcodec.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavcodec.xcframework; path = "../../tvOS/$(CONFIGURATION)/libavcodec.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000002 /* libavdevice.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavdevice.xcframework; path = "../../tvOS/$(CONFIGURATION)/libavdevice.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000003 /* libavfilter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavfilter.xcframework; path = "../../tvOS/$(CONFIGURATION)/libavfilter.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000004 /* libavformat.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavformat.xcframework; path = "../../tvOS/$(CONFIGURATION)/libavformat.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000005 /* libavutil.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libavutil.xcframework; path = "../../tvOS/$(CONFIGURATION)/libavutil.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000006 /* libswresample.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libswresample.xcframework; path = "../../tvOS/$(CONFIGURATION)/libswresample.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000007 /* libswscale.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libswscale.xcframework; path = "../../tvOS/$(CONFIGURATION)/libswscale.xcframework"; sourceTree = SOURCE_ROOT; };
+		D6F0A00130A8000000000008 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D6F0A00130A8000000000009 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D6F0A00130A800000000000A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1023,6 +1040,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F0A00230A8000000000001 /* libavcodec.xcframework in Frameworks */,
+				D6F0A00230A8000000000002 /* libavdevice.xcframework in Frameworks */,
+				D6F0A00230A8000000000003 /* libavfilter.xcframework in Frameworks */,
+				D6F0A00230A8000000000004 /* libavformat.xcframework in Frameworks */,
+				D6F0A00230A8000000000005 /* libavutil.xcframework in Frameworks */,
+				D6F0A00230A8000000000006 /* libswresample.xcframework in Frameworks */,
+				D6F0A00230A8000000000007 /* libswscale.xcframework in Frameworks */,
 				9CD79EDB2190068E00E39A7D /* UIKit.framework in Frameworks */,
 				9CD79EDC2190068E00E39A7D /* AVFoundation.framework in Frameworks */,
 				9CD79EDD2190068E00E39A7D /* Foundation.framework in Frameworks */,
@@ -1200,6 +1224,16 @@
 		9C4793421E71402E00AD4289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6F0A00130A8000000000001 /* libavcodec.xcframework */,
+				D6F0A00130A8000000000002 /* libavdevice.xcframework */,
+				D6F0A00130A8000000000003 /* libavfilter.xcframework */,
+				D6F0A00130A8000000000004 /* libavformat.xcframework */,
+				D6F0A00130A8000000000005 /* libavutil.xcframework */,
+				D6F0A00130A8000000000006 /* libswresample.xcframework */,
+				D6F0A00130A8000000000007 /* libswscale.xcframework */,
+				D6F0A00130A8000000000008 /* UIKit.framework */,
+				D6F0A00130A8000000000009 /* AVFoundation.framework */,
+				D6F0A00130A800000000000A /* Foundation.framework */,
 				D60CC2D52950B3EE000D1D72 /* libavcodec.xcframework */,
 				D60CC3142951060C000D1D72 /* libavcodec.xcframework */,
 				D60CC32B295106F6000D1D72 /* libavcodec.xcframework */,
@@ -2630,6 +2664,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -2669,6 +2704,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
@@ -2693,7 +2729,6 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2706,8 +2741,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 10.2;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -2732,7 +2768,6 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				INFOPLIST_FILE = SGPlayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2745,8 +2780,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 10.2;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
@@ -2899,7 +2935,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 10.2;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -2941,7 +2977,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 10.2;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
